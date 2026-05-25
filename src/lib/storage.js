@@ -213,17 +213,17 @@ export function resetAllData() {
 
 // Avatar system
 const CARD_AVATARS = [
-  { rank: "A", suit: "♠", color: "black" },
+  { rank: "A", suit: "♠", color: "red" },
   { rank: "K", suit: "♥", color: "red" },
   { rank: "Q", suit: "♦", color: "red" },
-  { rank: "J", suit: "♣", color: "black" },
-  { rank: "10", suit: "♠", color: "black" },
+  { rank: "J", suit: "♣", color: "red" },
+  { rank: "10", suit: "♠", color: "red" },
   { rank: "9", suit: "♥", color: "red" },
   { rank: "8", suit: "♦", color: "red" },
-  { rank: "7", suit: "♣", color: "black" },
+  { rank: "7", suit: "♣", color: "red" },
   { rank: "A", suit: "♥", color: "red" },
-  { rank: "K", suit: "♠", color: "black" },
-  { rank: "Q", suit: "♣", color: "black" },
+  { rank: "K", suit: "♠", color: "red" },
+  { rank: "Q", suit: "♣", color: "red" },
   { rank: "J", suit: "♦", color: "red" },
 ];
 
