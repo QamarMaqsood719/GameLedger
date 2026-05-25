@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --casino-green: #0a4c2a;
+  --casino-gold: #d4af37;
+  --casino-red: #c0392b;
+  --casino-felt: #1a5c35;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --glow-gold: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 3px;
+}
+
+/* Light Mode Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a4c2a;
+  border-radius: 3px;
+}
+
+/* Card Suit Colors */
+.suit-spade { color: #1a1a1a; }
+.suit-heart { color: #c0392b; }
+.suit-diamond { color: #c0392b; }
+.suit-club { color: #1a1a1a; }
+
+.dark .suit-spade { color: #f0f0f0; }
+.dark .suit-club { color: #f0f0f0; }
+
+/* Playing Card */
+.playing-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  border: 2px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.playing-card:hover {
+  transform: translateY(-4px) rotate(2deg);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Gold shimmer text */
+.gold-text {
+  background: linear-gradient(90deg, #d4af37, #f5e07a, #d4af37, #b8960c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Felt background pattern */
+.felt-bg {
+  background-color: #0a4c2a;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Rank badge */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Stat card */
+.stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Table hover */
+.table-row-hover:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* Sidebar transition */
+.sidebar-transition {
+  transition: all 0.3s ease;
+}
+
+/* Page animation */
+.page-enter {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Number counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.count-animate {
+  animation: countUp 0.5s ease-out;
+}
+
+/* Card flip */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+}
